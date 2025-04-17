@@ -8,13 +8,13 @@ from sklearn.metrics import mean_squared_error
 
 st.set_page_config(page_title="Rusty Bargain - Predicción de Autos", layout="wide")
 
-# Carga de datos robusta con cache
+# Carga de datos 
 @st.cache_data
 def load_data(uploaded_file=None):
     try:
         if uploaded_file is not None:
             df = pd.read_csv(uploaded_file)
-            st.success("Datos cargados desde el archivo subido por el usuario")
+            st.success("Datos cargados desde el archivo subido")
         else:
             possible_paths = [
                 "datasets/autos.csv",
@@ -23,7 +23,7 @@ def load_data(uploaded_file=None):
                 os.path.join("datasets", "autos.csv")
             ]
 
-            # Ruta opcional para entorno local
+            # Ruta local
             if os.path.exists("C:\\Users\\ricar\\Desktop\\rusty_bargain\\datasets\\autos.csv"):
                 possible_paths.insert(0, "C:\\Users\\ricar\\Desktop\\rusty_bargain\\datasets\\autos.csv")
 
@@ -50,7 +50,7 @@ def load_data(uploaded_file=None):
 st.sidebar.header("Carga de Datos")
 custom_file = st.sidebar.file_uploader("Sube tu propio CSV", type=["csv"])
 
-# Carga de datos usando la función mejorada
+# Carga de datos 
 data = load_data(custom_file)
 
 if not data.empty:
