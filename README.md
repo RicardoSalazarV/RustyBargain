@@ -1,4 +1,4 @@
-Rusty Bargain - Predicción del Valor de Autos Usados
+Rusty Bargain 
 
 https://rustybargain.onrender.com
 
