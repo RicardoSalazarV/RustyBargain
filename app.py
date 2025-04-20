@@ -17,10 +17,10 @@ def load_data(uploaded_file=None):
             st.success("Datos cargados desde el archivo subido")
         else:
             possible_paths = [
-                "datasets/autos.csv",
+                "datasets/car_data.csv",
                 "autos.csv",
                 "./autos.csv",
-                os.path.join("datasets", "autos.csv")
+                os.path.join("datasets", "car_data.csv")
             ]
 
             # Ruta local
